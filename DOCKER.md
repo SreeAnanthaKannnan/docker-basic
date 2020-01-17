@@ -45,3 +45,13 @@ docker rmi c7460dfcab50
     docker rm -f containerid
 #### example: 
     docker rm c7460dfcab50
+
+### create docker images
+#### create folder
+    mkdir folder-name
+#### create file
+    vi filename
+#### To read the file
+    cat filenate
+#### build the docker
+    docker build
