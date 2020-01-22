@@ -64,4 +64,7 @@ docker rmi c7460dfcab50
     docker build --tag nginx_custom:v1 -f Dockerfile
 now you centose_apache added in your image list
 
-### create container
+### docker shell 
+    docker exec -it container-name /bin/bash
+### docker logs
+    docker logs container-name
