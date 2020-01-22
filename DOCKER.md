@@ -45,6 +45,7 @@ docker rmi c7460dfcab50
 #### remove the container 
     docker rm containerid
     docker rm -f containerid
+    docker rm $(docker ps -aq)
 #### example: 
     docker rm c7460dfcab50
 
