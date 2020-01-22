@@ -39,6 +39,8 @@ docker rmi c7460dfcab50
 #### run wiht forground
     docker run -d nginx:alphine
 #### list out all container
+    docker ps       => running list from docker container
+    docker ps -a    => all list form docker
     docker ps -l
 #### remove the container 
     docker rm containerid
@@ -50,8 +52,15 @@ docker rmi c7460dfcab50
 #### create folder
     mkdir folder-name
 #### create file
-    vi filename
+    vi Dockerfile
+    nano Dockerfile
 #### To read the file
     cat filenate
 #### build the docker
-    docker build
+#### by defaulf Dockerfile is choose
+    docker build --tag centose_apache:v1 .
+#### if you want to mention name of dockerfile
+    docker build --tag nginx_custom:v1 -f Dockerfile
+now you centose_apache added in your image list
+
+### create container
