@@ -33,11 +33,11 @@ docker rmi c7460dfcab50
     docker pull nginx
 #### whenever use run the new container will create
 #### run with background
-    docker run -d nginx:alphine
+    docker run -d --name container-name nginx:alphine
 #### specifi port
-    docker run -d -p 9090:80 nginx:latest
+    docker run -d -p --name container-name 9090:80 nginx:latest
 #### run wiht forground
-    docker run -d nginx:alphine
+    docker run -d --name container-name nginx:alphine
 #### list out all container
     docker ps       => running list from docker container
     docker ps -a    => all list form docker
@@ -68,3 +68,57 @@ now you centose_apache added in your image list
     docker exec -it container-name /bin/bash
 ### docker logs
     docker logs container-name
+
+
+### docker volume
+Volume in docker allows you to presist the data after a container dies
+    Normal volumes
+    Bind volumes
+    Anonymous volumes
+    docker volume --help
+#### to create docker volume
+    docker volume create volumename
+#### to list our all docker volumes
+    docker volume ls
+#### to inspect volume
+    docker volume inspect volumename
+#### to remove volume
+    docker volume rm volumename
+#### to remove all volume in your system
+    docker volume prune
+
+
+#### Basic mysql creation in docker
+    docker run -d --name mysql -e "MYSQL_ROOT_PASSWORD=123456" mysql:5.7
+    docker exec -ti mysql bash
+    mysql -u root -p 123456
+#### mysql with volume
+    create a foler mnt/mysql, you can give any name for that
+    docker run -d -v /mnt/mysql:/var/lib/mysql --name mysql -e "MYSQL_ROOT_PASSWORD=123456" mysql:5.7
+#### mysql with volume
+    docker volume create mysql_volume
+    docker run -d -v mysql_volume:/var/lib/mysql --name mysql -e "MYSQL_ROOT_PASSWORD=123456" mysql:5.7
+##### remove the mysql with volue
+when you create a mysql, the volume automatically created. but if you remove the continer the volume will not remove
+from there.
+    docker rm -fv mysql
+
+
+#### Docker network
+Networks in docker are way useful to provide network connection between containers
+    Bridge network
+    Host network
+    None network
+
+#### docker-compse.yml
+    docker-compse up
+    docker-compse up --build
+    docker-compse down
+    docker-compse stop
+    docker-compse start
+    
+#### goto docker root folder
+    docker info | grep -i root
+    sudo su
+    cd /var/lib/docker
+    ls

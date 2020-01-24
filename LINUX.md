@@ -15,7 +15,9 @@
 #### Kill the port (Use any one)
     kill port - sudo fuser -k  3000/tcp
     sudo kill -9 $(sudo lsof -t -i:3000)
-
+#### unlock the folder
+    sudo chown -R username folername
+    whoami  => to get username
 
 
 
