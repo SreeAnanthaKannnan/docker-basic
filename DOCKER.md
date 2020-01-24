@@ -46,6 +46,7 @@ docker rmi c7460dfcab50
     docker rm containerid
     docker rm -f containerid
     docker rm $(docker ps -aq)
+    sudo aa-remove-unknown => some time error will come like unknow. that time use this command
 #### example: 
     docker rm c7460dfcab50
 
