@@ -18,8 +18,8 @@
 #### unlock the folder
     sudo chown -R username folername
     whoami  => to get username
-
-
+#### get system ip
+    ip a
 
 
 #### some list
