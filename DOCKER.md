@@ -33,11 +33,11 @@ docker rmi c7460dfcab50
     docker pull nginx
 #### whenever use run the new container will create
 #### run with background
-    docker run -d --name container-name nginx:alphine
+    docker run -dti --name container-name nginx:alphine
 #### specifi port
-    docker run -d -p --name container-name 9090:80 nginx:latest
+    docker run -dti --name container-name -p 9090:80 nginx:latest
 #### run wiht forground
-    docker run -d --name container-name nginx:alphine
+    docker run -dti --name container-name nginx:alphine
 #### list out all container
     docker ps       => running list from docker container
     docker ps -a    => all list form docker
@@ -110,6 +110,10 @@ Networks in docker are way useful to provide network connection between containe
     Bridge network
     Host network
     None network
+#### check bridge network
+    docker network ls
+    docker network inspect bridge
+
 
 #### docker network basic command
     ip a
