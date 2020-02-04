@@ -111,6 +111,33 @@ Networks in docker are way useful to provide network connection between containe
     Host network
     None network
 
+#### docker network basic command
+    ip a
+    ip a | grep docker
+    docker network ls
+    docker network ls | grep bridge
+    docker network inspect bridge    
+    docker instpect container1  => to inspect the container
+
+#### created two container
+##### container1            #### container2
+IPV4    : 172.17.0.1        IPV4    : 172.17.0.1
+gateway : 172.17.0.2        gateway : 172.17.0.3
+
+only you can ping container with ip address
+    docker exec container1 bash -c "ping 172.17.0.3"
+below command will not work, because of this ip did't mention. only mantion container name
+    docker exec container1 bash -c "ping container2"
+1. by default network you can't pint with conatiner name
+2. if you are creating new network, you can ping container with name
+
+#### creating docker network
+    docker network create --help
+    docker network create -d bridge --subnet 172.18.0.0/16 --gateway 172.18.0.1 network_name
+#### remove docker network
+    docer netwrok rm netwrok_name
+#### add a container in newly created network
+    docker run -dti --network network_name --name contianer3 centos 
 #### docker-compse.yml
     docker-compse up
     docker-compse up --build
