@@ -1,14 +1,24 @@
-##### Create
+#### create
     insertOne(data, options)
     insertMany(data, options)
-#### Read
+
+---
+#### read
     find(filter, options)
     findOne(filter, options)
-#### Update
-    updateOne(filter, data, option)
-    updateMany(filter,data, option)
-    replaceOne(filter, data, option)
-#### Delete
+
+---
+## update
+    updateOne(filter, data, options)
+    updateMany(filter, data, options)
+    replaceOne(filter, data, options)
+
+    db.flighData.updateOne({ "distance": 950}, {$set: {marker: "delete"}})
+
+---
+## delete
     deleteOne(filter, options)
     deleteMany(filter, options)
-    
+
+    db.flighData.deleteOne({"departureAirport": "LHR"})
+    db.flighData.deleteOne({"departureAirport": "LHR"})
