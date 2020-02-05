@@ -69,3 +69,20 @@ const passengers = [
         "age": 29
     }
 ]
+
+
+db.chkdata.find({"application_form.application_no":"HTE2020-0002"},
+ {_id:0, "application_form.application_status":1, 
+ application_form: {$elemMatch: { application_no: "HTE2020-0002" }} }).pretty()
+
+
+
+db.chkdata.find({"application_form.application_no":"HTE2020-0002"},
+{_id:0, "application_form.attestation_docs":1}
+).pretty()
+
+
+ db.chkdata.find({"application_form.application_no":"HTE2020-0003"},
+ {_id: 0, 'application_form.$': 1})[0]
+
+
