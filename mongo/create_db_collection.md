@@ -4,8 +4,17 @@
     use flights
 if you are not already create db, you can use it.
 
+#### delete database
+    db.dropDatabase()
+
+### delete collection
+    db.myCollection.drop()
+
+db.states
+
 #### create collection
-create single collection
+```js
+// create single collection
 
     db.flightData.insertOne({
         "departureAirport": "MUC",
@@ -14,7 +23,8 @@ create single collection
         "distance": 12000,
         "intercontinental": true
     })
-create multiple collection
+
+// create multiple collection
 
     db.flightData.insertMany([{
             "departureAirport": "MUC",
@@ -31,6 +41,7 @@ create multiple collection
             "intercontinental": false
         }
     ])
-
+```
 #### get all the data
+
     db.flightData.find().pretty()

@@ -6,14 +6,14 @@
 ## read
     find(filter, options)
     findOne(filter, options)
-
+```js
     db.flightData.find({"departureAirport": "LHR"})
     db.flightData.findOne({"departureAirport": "LHR"})
-
+```
 *It's will find all the data*
-  
+```js
     db.flightData.find()
-
+```
 *pretty() method used to show the data with alignment in the mongo shell*
 
     db.flightData.find().pretty()
@@ -29,10 +29,10 @@
     db.flightData.find({"distance": {$gt: 500}})
 
 *get only name form the passenger collection. _id will retrive automatically, if you don't want _id then use secound query as _id:0*
-
+```js
     db.passengers.find({}, {name:1})
     db.passengers.find({}, { _id:0, name:1 })
-
+```
 ##### find arry inside data
 ```js
 db.passengers.find({"name":"ananth"})
@@ -65,21 +65,22 @@ db.passengers.find({"name":"ananth"})
     updateOne(filter, data, options)
     updateMany(filter, data, options)
     replaceOne(filter, data, options)
-
+```js
     db.flightData.updateOne({ "distance": 950}, {$set: {marker: "delete"}})
 
     db.flightData.updateMany({}, {$set:{marker:"toDelete"}})
-
+```
 *update and replace operations are delete all key and data only repace as marker key and value below query result only _id and marker another data are will be lost*
-
+```js
     db.flightData.update({ "distance": 950}, {marker: "delete"})
     db.flightData.replaceOne({ "distance": 950}, {marker: "delete"})
+```
 ---
 ## delete
     deleteOne(filter, options)
     deleteMany(filter, options)
-
+```js
     db.flightData.deleteOne({"departureAirport": "LHR"})
     db.flightData.deleteMany({"departureAirport": "LHR"})
     db.flightData.deleteMany({}) 
-
+```
