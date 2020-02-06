@@ -10,7 +10,8 @@ if you are not already create db, you can use it.
 ### delete collection
     db.myCollection.drop()
 
-db.states
+#### check about db or details about db
+    db.states
 
 #### create collection
 ```js

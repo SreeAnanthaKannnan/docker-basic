@@ -5,8 +5,8 @@ const flightData = [
         "aircraft": "Airbus A380",
         "distance": 12000,
         "intercontinental": true,
-        "status":{
-            "description":"on-time",
+        "status": {
+            "description": "on-time",
             "lastUpdated": "1 hour ago",
             "details": {
                 "responsible": "max swing"
@@ -19,8 +19,8 @@ const flightData = [
         "aircraft": "Airbus A320",
         "distance": 950,
         "intercontinental": false,
-        "status":{
-            "description":"on-time",
+        "status": {
+            "description": "on-time",
             "lastUpdated": "1 hour ago",
             "details": {
                 "responsible": "max swing"
@@ -31,58 +31,61 @@ const flightData = [
 
 const passengers = [
     {
-        "name":"ananth",
+        "name": "ananth",
         "age": 28,
-        "hobbies":["sports", "cooking"]
+        "hobbies": ["sports", "cooking"]
     },
     {
-        "name":"kannan",
+        "name": "kannan",
         "age": 10,
-        "hobbies":["reading", "cooking"]
+        "hobbies": ["reading", "cooking"]
     },
     {
-        "name":"sree",
+        "name": "sree",
         "age": 78
     },
     {
-        "name":"bala",
+        "name": "bala",
         "age": 13
     },
     {
-        "name":"mani",
+        "name": "mani",
         "age": 30
     },
     {
-        "name":"abi",
+        "name": "abi",
         "age": 12
     },
     {
-        "name":"rapid",
+        "name": "rapid",
         "age": 50
     },
     {
-        "name":"hai",
+        "name": "hai",
         "age": 54
     },
     {
-        "name":"hello",
+        "name": "hello",
         "age": 29
     }
 ]
 
 
-db.chkdata.find({"application_form.application_no":"HTE2020-0002"},
- {_id:0, "application_form.application_status":1, 
- application_form: {$elemMatch: { application_no: "HTE2020-0002" }} }).pretty()
+db.chkdata.find({ "application_form.application_no": "HTE2020-0002" },
+    {
+        _id: 0, "application_form.application_status": 1,
+        application_form: { $elemMatch: { application_no: "HTE2020-0002" } }
+    }).pretty()
 
 
 
-db.chkdata.find({"application_form.application_no":"HTE2020-0002"},
-{_id:0, "application_form.attestation_docs":1}
+db.chkdata.find({ "application_form.application_no": "HTE2020-0002" },
+    { _id: 0, "application_form.attestation_docs": 1 }
 ).pretty()
 
 
- db.chkdata.find({"application_form.application_no":"HTE2020-0003"},
- {_id: 0, 'application_form.$': 1})[0]
+db.chkdata.find({ "application_form.application_no": "HTE2020-0003" },
+    { _id: 0, 'application_form.$': 1 })[0]
+
 
 
