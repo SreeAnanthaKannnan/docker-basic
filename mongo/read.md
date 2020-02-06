@@ -138,3 +138,50 @@ db.movies.find({genres:["Action"]}, {genres:1, id:1})
 }
 
 ```
+
+### Array insdie object
+```js
+// find the array inside object
+db.users.find({ "hobbies.title":"sports" })
+
+// size operator
+// find the data, which is arrya length should be 2
+db.users.find({ hobbies: { $size: 2} })
+
+// all operator
+// if "Drama" and "Horror" included in the array, that data will be retrive
+db.movies.find({genres: { $all:["Drama", "Horror"] }})
+
+// elemMatch operator
+// title should be cooking and frequency gretater or equal to 6
+db.users.find({
+    hobbies: { $elemMatch: { title:"cooking", frequency: {$gte: 6} }}
+})
+
+```
+### Projection
+```js
+// only return the name value
+    db.movies.find(
+        {runtime:{$eq: 60}}, 
+        {
+            name:1,
+            "schedule.time":1,
+            _id:0
+        })
+
+
+// slice
+// only two array data return in this application
+db.movies.find(
+    { "rating.average": { $gt: 9} },
+    { genres: { $slice: 2}, name: 1 }
+)
+
+// skip first value in arry, return data from two
+db.movies.find(
+    { "rating.average": { $gt: 9} },
+    { genres: { $slice: [1, 2]}, name: 1 }
+)
+
+```
