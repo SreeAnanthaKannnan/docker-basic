@@ -1,5 +1,7 @@
 #### show list of db
     show dbs
+#### show list of collections
+    show collections
 #### create database 
     use flights
 if you are not already create db, you can use it.
@@ -12,6 +14,7 @@ if you are not already create db, you can use it.
 
 #### check about db or details about db
     db.states
+
 
 #### import the data into the collection
     mongoimport jsonfile.json -d dbname -c collectionName --jsonArray
