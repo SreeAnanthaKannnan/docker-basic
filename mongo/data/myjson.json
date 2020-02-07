@@ -1,0 +1,52 @@
+{
+	"gender" : "female",
+	"name" : {
+		"title" : "ms",
+		"first" : "anaëlle",
+		"last" : "adam"
+	},
+	"location" : {
+		"street" : "6952 rue abel-ferry",
+		"city" : "toulouse",
+		"state" : "mayenne",
+		"postcode" : 69995,
+		"coordinates" : {
+			"latitude" : "3.6559",
+			"longitude" : "174.2405"
+		},
+		"timezone" : {
+			"offset" : "+8:00",
+			"description" : "Beijing, Perth, Singapore, Hong Kong"
+		}
+	},
+	"email" : "anaëlle.adam@example.com",
+	"login" : {
+		"uuid" : "1bb3f501-b464-4e4b-a564-09d9b7b82721",
+		"username" : "brownwolf302",
+		"password" : "gaston",
+		"salt" : "eFuVRBvj",
+		"md5" : "aea71691758ed3149dfe6ff09f99a280",
+		"sha1" : "d97cafb941fa4b54f891eecf856de90fed00b43e",
+		"sha256" : "25e7da7cddeca26e733e74a5414616fc565fbb5847f5a9f749565477459cfbf3"
+	},
+	"dob" : {
+		"date" : "1987-10-20T11:33:44Z",
+		"age" : 30
+	},
+	"registered" : {
+		"date" : "2008-01-09T05:32:18Z",
+		"age" : 10
+	},
+	"phone" : "01-38-71-69-99",
+	"cell" : "06-94-15-71-81",
+	"id" : {
+		"name" : "INSEE",
+		"value" : "2NNaN77968794 05"
+	},
+	"picture" : {
+		"large" : "https://randomuser.me/api/portraits/women/82.jpg",
+		"medium" : "https://randomuser.me/api/portraits/med/women/82.jpg",
+		"thumbnail" : "https://randomuser.me/api/portraits/thumb/women/82.jpg"
+	},
+	"nat" : "FR"
+}
