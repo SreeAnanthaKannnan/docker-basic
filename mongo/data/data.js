@@ -88,4 +88,3 @@ db.chkdata.find({ "application_form.application_no": "HTE2020-0003" },
     { _id: 0, 'application_form.$': 1 })[0]
 
 
-
