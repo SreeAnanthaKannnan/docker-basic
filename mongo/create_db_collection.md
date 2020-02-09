@@ -1,5 +1,7 @@
 #### show list of db
     show dbs
+#### show list of collections
+    show collections
 #### create database 
     use flights
 if you are not already create db, you can use it.
@@ -10,8 +12,14 @@ if you are not already create db, you can use it.
 ### delete collection
     db.myCollection.drop()
 
-db.states
+#### check about db or details about db
+    db.states
 
+
+#### import the data into the collection
+    mongoimport jsonfile.json -d dbname -c collectionName --jsonArray
+    mongoimport person.json -d analytics -c persons --jsonArray
+    
 #### create collection
 ```js
 // create single collection

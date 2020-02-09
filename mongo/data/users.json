@@ -1,0 +1,49 @@
+[
+    {
+        "name":"max",
+        "hobbies":[
+            {
+                "title":"sports",
+                "frequency": 3
+            },
+            {
+                "title":"cooking",
+                "frequency": 6
+            }
+        ],
+        "phone": 2598745298
+    },
+    {
+        "name":"manuel",
+        "hobbies":[
+            {
+                "title":"cooking",
+                "frequency": 5
+            },
+            {
+                "title":"cars",
+                "frequency": 2
+            }
+        ],
+        "phone": 2598745298,
+        "age": 30
+    },
+    {
+        "name":"anna",
+        "hobbies":[
+            {
+                "title":"sports",
+                "frequency": 3
+            },
+            {
+                "title":"yoga",
+                "frequency": 2
+            }
+        ],
+        "phone": 2598745298,
+        "age": null
+    }
+]
+
+
+
