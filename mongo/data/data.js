@@ -1,5 +1,4 @@
-const flightData = [
-    {
+const flightData = [{
         "departureAirport": "MUC",
         "arrivalAirport": "SFO",
         "aircraft": "Airbus A380",
@@ -29,8 +28,7 @@ const flightData = [
     }
 ]
 
-const passengers = [
-    {
+const passengers = [{
         "name": "ananth",
         "age": 28,
         "hobbies": ["sports", "cooking"]
@@ -71,20 +69,56 @@ const passengers = [
 ]
 
 
-db.chkdata.find({ "application_form.application_no": "HTE2020-0002" },
-    {
-        _id: 0, "application_form.application_status": 1,
-        application_form: { $elemMatch: { application_no: "HTE2020-0002" } }
-    }).pretty()
+db.chkdata.find({
+    "application_form.application_no": "HTE2020-0002"
+}, {
+    _id: 0,
+    "application_form.application_status": 1,
+    application_form: {
+        $elemMatch: {
+            application_no: "HTE2020-0002"
+        }
+    }
+}).pretty()
 
 
 
-db.chkdata.find({ "application_form.application_no": "HTE2020-0002" },
-    { _id: 0, "application_form.attestation_docs": 1 }
-).pretty()
+db.chkdata.find({
+    "application_form.application_no": "HTE2020-0002"
+}, {
+    _id: 0,
+    "application_form.attestation_docs": 1
+}).pretty()
 
 
-db.chkdata.find({ "application_form.application_no": "HTE2020-0003" },
-    { _id: 0, 'application_form.$': 1 })[0]
+db.chkdata.find({
+    "application_form.application_no": "HTE2020-0003"
+}, {
+    _id: 0,
+    'application_form.$': 1
+})[0]
 
 
+
+
+
+
+
+
+db.persons.aggregate([{
+    $group: {
+        _id: {
+            age: "$dob.age"
+        },
+        totalPersons: {gender: "$gender"}
+    }
+}
+])
+
+
+db.persons.aggregate([
+    { $match: { gender: 'female'}},
+    { $group: { _id: { place: "$location.state" }, 
+    totalPersons: {$sum: 1}  } }
+  
+]) 

@@ -45,6 +45,9 @@ db.persons.aggregate([
 #### pushing element into newly created array
 ```js
 db.persons.aggregate([
-    { $group: {_id: { age: '$age' } } }
+    { $group: {_id: { age: "$dob.age" },
+      totalPersons: {$sum: 1} 
+    }
+    }
 ])
 ```

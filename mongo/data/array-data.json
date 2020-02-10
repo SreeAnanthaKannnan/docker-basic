@@ -32,5 +32,3 @@
 ]
 
 
-// db.array_data.find({ examScores:{$elemMatch: { "difficulty": 8, "score": 44.2 } }  }, 
-// { _id:0, examScores:1 }).pretty()
