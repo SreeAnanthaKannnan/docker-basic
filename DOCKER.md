@@ -87,7 +87,8 @@ Volume in docker allows you to presist the data after a container dies
     docker volume rm volumename
 #### to remove all volume in your system
     docker volume prune
-
+#### to remove perticular volume
+    docker volume rm $(docker volume ls -q)
 
 #### Basic mysql creation in docker
     docker run -d --name mysql -e "MYSQL_ROOT_PASSWORD=123456" mysql:5.7
