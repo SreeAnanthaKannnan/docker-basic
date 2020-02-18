@@ -47,6 +47,8 @@ docker rmi c7460dfcab50
     docker rm -f containerid
     docker rm $(docker ps -aq)
     sudo aa-remove-unknown => some time error will come like unknow. that time use this command
+#### remove finger print
+    docker rmi -f $(docker images | grep fabcar | awk '{print $3}')
 #### example: 
     docker rm c7460dfcab50
 
